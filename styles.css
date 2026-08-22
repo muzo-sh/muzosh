@@ -98,9 +98,22 @@ section { padding: 100px 8vw; }
   max-width: 55%;
   object-fit: cover;
   object-position: top center;
-  opacity: 0.12;
-  filter: grayscale(1) contrast(1.05);
+
+  /* ↓↓↓ THE THREE KNOBS YOU CAN TUNE YOURSELF ↓↓↓ */
+
+  /* Visibility: 0 = invisible, 1 = fully opaque photo. Currently 0.32 */
+  opacity: 0.32;
+
+  /* Color: delete this whole line to show the ORIGINAL photo colors.
+     Keep it (with grayscale(1)) for black & white. */
+  /* filter: grayscale(1) contrast(1.05); */
+
+  /* How it merges with the cream background. Try swapping the word:
+     - "multiply"   → darkens, colors stay muted (current)
+     - "normal"     → photo sits on top plainly, truest colors
+     - "luminosity" → back to a black & white-ish watermark look */
   mix-blend-mode: multiply;
+
   -webkit-mask-image: linear-gradient(to left, black 35%, transparent 85%);
   mask-image: linear-gradient(to left, black 35%, transparent 85%);
   pointer-events: none;
