@@ -102,7 +102,7 @@ section { padding: 100px 8vw; }
   /* ↓↓↓ THE THREE KNOBS YOU CAN TUNE YOURSELF ↓↓↓ */
 
   /* Visibility: 0 = invisible, 1 = fully opaque photo. Currently 0.32 */
-  opacity: 0.32;
+  opacity: 0.50;
 
   /* Color: delete this whole line to show the ORIGINAL photo colors.
      Keep it (with grayscale(1)) for black & white. */
