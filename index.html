@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muzaffer Bener — Software Development Student</title>
-<meta name="description" content="Muzaffer Bener — Software Development student in Wrocław, Poland. Projects, experience, and contact.">
+<meta name="description" content="Muzaffer Bener — Software Development student in Wrocław, Poland. Projects, experience, visuals, and contact.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -17,14 +17,15 @@
 
 <header class="top">
   <div class="wrap top__inner">
-    <a href="#top" class="top__name">Muzaffer Bener</a>
-    <nav class="top__links" aria-label="Main">
-      <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#top" class="top__logo">MB<span class="dot">.</span></a>
+    <nav class="top__links" aria-label="Main navigation">
+      <a href="#about" data-i18n="nav.about">My Story</a>
       <a href="#work" data-i18n="nav.projects">Projects</a>
+      <a href="#visuals">Visuals</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#contact" class="top__cta" data-i18n="nav.contact">Say hi</a>
     </nav>
-    <div class="lang" role="group" aria-label="Language">
+    <div class="lang" role="group" aria-label="Language switcher">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="pl" aria-pressed="false">PL</button>
       <button type="button" data-lang="tr" aria-pressed="false">TR</button>
@@ -32,201 +33,275 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" class="wrap bento-container">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <canvas id="hero-3d" class="hero__canvas" aria-hidden="true"></canvas>
-    <div class="wrap">
+  <!-- ============ ROW 1: HERO BENTO + PORTRAIT BENTO ============ -->
+  <section class="bento-grid hero-bento">
+    <!-- Hero Main Card (8 cols) -->
+    <div class="bento-card bento-card--hero" data-tilt>
+      <canvas id="hero-3d" class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__content">
+        <div class="what-i-do-pills" aria-label="What I do">
+          <span class="pill-badge pill-badge--green" data-i18n="badge.1">Software Development</span>
+          <span class="pill-badge" data-i18n="badge.2">Hardware &amp; Diagnostics</span>
+          <span class="pill-badge" data-i18n="badge.3">Automation</span>
+          <span class="pill-badge" data-i18n="badge.4">Photography</span>
+        </div>
 
-      <p class="hero__note" aria-hidden="true">
-        hi, I'm<br>Muzaffer
-        <svg class="hero__arrow" viewBox="0 0 70 60" width="70" height="60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-          <path d="M62 6 C 48 10, 22 22, 10 48"/>
-          <path d="M10 48 L 9 34 M10 48 L 23 44"/>
-        </svg>
+        <p class="eyebrow" data-i18n="hero.eyebrow">&gt; software development student / Wrocław, Poland</p>
+        <h1 class="hero__name">Muzaffer Bener</h1>
+        <p class="hero__tagline" data-i18n="hero.lead">
+          Pursuing to build a life with balance where I will not trade my every night for.
+          Using technology to increase capability—not lazier, but smarter solutions.
+          Aiming for everyday innovations to make the world a more liveable place, and looking for a place where I will make an unforgettable history.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary" data-i18n="hero.work">See my work</a>
+          <a href="/resume.pdf" class="btn btn--ghost" data-i18n="hero.cv">Download My CV</a>
+        </div>
+
+        <div class="hero__contacts">
+          <a href="https://github.com/muzo-sh" target="_blank" rel="noopener">
+            <span>GitHub</span> ↗
+          </a>
+          <a href="https://www.linkedin.com/in/muzosh/" target="_blank" rel="noopener">
+            <span>LinkedIn</span> ↗
+          </a>
+          <a href="https://visuals.muzo.sh" target="_blank" rel="noopener">
+            <span>Muzo Visuals</span> ↗
+          </a>
+          <a href="mailto:muzafferbener@icloud.com">
+            <span>Email</span> ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portrait Card (4 cols) -->
+    <div class="bento-card bento-card--portrait" data-tilt>
+      <img src="portrait.jpg" alt="Muzaffer Bener" class="portrait__img">
+      <div class="portrait__overlay">
+        <span class="status-dot"></span>
+        <span class="portrait__loc">Wrocław, PL · WSB Merito</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROW 2: 01 ABOUT / STORY + STATS BENTO ============ -->
+  <section id="about" class="bento-grid about-bento">
+    <div class="bento-card bento-card--story" data-tilt>
+      <p class="section-label">01 — <span data-i18n="about.label">About</span></p>
+      <h2 data-i18n="about.h2">I wasn't much of a student until one opportunity changed that.</h2>
+      <p data-i18n="about.p">
+        Until 10th grade I wasn't especially engaged in school. That changed in 11th grade, when I was picked for my first Erasmus+ project. That's genuinely where things turned around—my teachers kept choosing me for whatever international project came up after that, mostly because I was reliable in English and stepped in early when something was about to go sideways. I'd rather fix problems quietly, step by step, than let noise build up around me, and all of that put me in a team-leader seat again and again.
       </p>
+      <p data-i18n="about.p2">
+        From then until the end of high school I gravitated toward being the person who holds a room together: coordinating across languages and representing my school abroad. That opportunity gave me the vision to start taking action, which changed my life and brought me all the way to Poland.
+      </p>
+    </div>
 
-      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Software development student · Wrocław, Poland</p>
+    <div class="bento-stats-col">
+      <div class="bento-card bento-card--stat" data-tilt>
+        <span class="stat__tag" data-i18n="facts.now">Currently</span>
+        <strong class="stat__num" data-i18n="facts.nowTitle">3rd Year Student</strong>
+        <span class="stat__label" data-i18n="facts.nowv">B.Sc. Software Development, WSB Merito Wrocław</span>
+      </div>
+      <div class="bento-card bento-card--stat" data-tilt>
+        <span class="stat__tag" data-i18n="facts.lang">Languages</span>
+        <strong class="stat__num">4 Languages</strong>
+        <span class="stat__label" data-i18n="facts.langv">Turkish (Native) · English (Fluent C1) · German (Pre-intermediate) · Polish (Beginner)</span>
+      </div>
+      <div class="bento-card bento-card--stat" data-tilt>
+        <span class="stat__tag" data-i18n="facts.grad">Timeline</span>
+        <strong class="stat__num" data-i18n="facts.gradv">February 2028</strong>
+        <span class="stat__label" data-i18n="facts.gradSub">Expected B.Sc. Graduation</span>
+      </div>
+    </div>
+  </section>
 
-      <h1 class="hero__title"><span data-i18n="hero.t1">Software, close to</span>
-        <span class="mark"><span data-i18n="hero.t2">real machines.</span><svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 130 7 S 230 3, 298 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
-      </h1>
+  <!-- ============ ROW 3: 02 PROJECTS + STARRED GITHUB + LIGHTS OUT ============ -->
+  <section id="work" class="bento-section">
+    <div class="section-head">
+      <div>
+        <p class="section-label">02 — <span data-i18n="work.label">Projects</span></p>
+        <h2 data-i18n="work.h2">What I'm building</h2>
+      </div>
+      <p class="section-sub" data-i18n="work.intro">I'd rather show a few honest, real projects than a long AI-generated list. Starred repositories sync automatically from GitHub.</p>
+    </div>
 
-      <p class="hero__lead" data-i18n="hero.lead">Third-year software development student. I like knowing why things work — cars, automation, puzzles — and I'm learning Java by building small, real projects.</p>
-
-      <ul class="tags" aria-label="Tools I use">
-        <li>Python</li>
-        <li data-i18n="tag.java">Java (learning)</li>
-        <li data-i18n="tag.sql">SQL (basics)</li>
-        <li>Git</li>
-      </ul>
-
-      <div class="hero__actions">
-        <a href="#work" class="btn btn--solid" data-i18n="hero.work">See my work</a>
-        <a href="/resume.pdf" class="btn btn--outline" data-i18n="hero.cv">Download my CV</a>
+    <div class="bento-grid work-bento">
+      <!-- Featured Project 1: Garage Log -->
+      <div class="bento-card bento-card--project" data-tilt>
+        <div class="card-top">
+          <span class="pill pill--green" data-i18n="p1.pill">In progress</span>
+          <span class="mono-tag">Java 17 · OBD-II</span>
+        </div>
+        <h3>Garage Log &amp; OBD-II Decoder</h3>
+        <p data-i18n="p1.desc">
+          A console-first application that tracks fuel and service history, reminds me when maintenance is due, and decodes basic OBD-II frames (coolant temperature, fault codes). Built while learning Java step by step.
+        </p>
+        <div class="card-footer">
+          <span class="card__meta" data-i18n="p1.meta">Java 17 · flat-file storage · automated tests</span>
+          <a href="https://github.com/muzo-sh" target="_blank" rel="noopener" class="card-link" data-i18n="p1.link">See on GitHub ↗</a>
+        </div>
       </div>
 
-      <div class="hero__links">
+      <!-- Featured Project 2: Hybrid Battery Health -->
+      <div class="bento-card bento-card--project" data-tilt>
+        <div class="card-top">
+          <span class="pill" data-i18n="p2.pill">Concept</span>
+          <span class="mono-tag">2ZR-FXE · Diagnostics</span>
+        </div>
+        <h3 data-i18n="p2.title">Hybrid Battery Health Monitor</h3>
+        <p data-i18n="p2.desc">
+          A clear diagnostic tool for my 2011 Lexus CT200h: block temperatures in °C with green / amber / red zones, plain-language fault codes, and step-by-step maintenance checks.
+        </p>
+        <div class="card-footer">
+          <span class="card__meta">Automotive Telemetry · DIY Maintenance</span>
+          <span class="mono-tag">Next milestone</span>
+        </div>
+      </div>
+
+      <!-- Live Starred Repos from GitHub -->
+      <div class="bento-card bento-card--repos" data-tilt>
+        <div class="card-top">
+          <span class="pill pill--green">★ Starred on GitHub</span>
+          <a href="https://github.com/muzo-sh?tab=stars" target="_blank" rel="noopener" class="card-link">github.com/muzo-sh ↗</a>
+        </div>
+        <div id="github-projects" class="repo-grid">
+          <p class="repo-card__loading">Loading starred repositories…</p>
+        </div>
+      </div>
+
+      <!-- Interactive Mini-Game: Lights Out -->
+      <div class="bento-card bento-card--game" data-tilt>
+        <div class="game-info">
+          <span class="pill" data-i18n="p3.pill">Play</span>
+          <h3 data-i18n="p3.title">Side quest: Lights Out</h3>
+          <p data-i18n="p3.desc">Click a cell to flip it and its neighbors. Turn all lights off to solve the board.</p>
+          <p class="lo__count"><span data-i18n="lo.moves">Moves:</span> <strong id="lo-moves">0</strong></p>
+          <p class="lo__status" id="lo-status" aria-live="polite"></p>
+          <button type="button" class="btn btn--small" id="lo-new" data-i18n="lo.new">New puzzle</button>
+        </div>
+        <div class="lo__board" id="lo-board" role="group" aria-label="Lights Out 5 by 5 board"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROW 4: 03 MUZO VISUALS (LIVE PHOTOGRAPHY SHOWCASE) ============ -->
+  <section id="visuals" class="bento-section">
+    <div class="bento-card bento-card--visuals" data-tilt>
+      <div class="visuals-head">
+        <div>
+          <p class="section-label">03 — Photography</p>
+          <h2>Muzo Visuals — Moments, framed as I see them.</h2>
+          <p class="section-sub">Portraits, night street scenes, and creative visuals around Wrocław. Pulled live from my photography portfolio.</p>
+        </div>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="btn btn--primary">Visit visuals.muzo.sh ↗</a>
+      </div>
+      <div class="visuals-strip" id="visuals-strip">
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="visuals-thumb">
+          <img src="https://raw.githubusercontent.com/muzo-sh/muzovisuals/main/images/07.jpg" alt="Wrocław stone bridge in evening light" loading="lazy">
+        </a>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="visuals-thumb">
+          <img src="https://raw.githubusercontent.com/muzo-sh/muzovisuals/main/images/01.jpg" alt="Night portrait on bridge" loading="lazy">
+        </a>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="visuals-thumb">
+          <img src="https://raw.githubusercontent.com/muzo-sh/muzovisuals/main/images/03.jpg" alt="Glowing lanterns evening portrait" loading="lazy">
+        </a>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="visuals-thumb">
+          <img src="https://raw.githubusercontent.com/muzo-sh/muzovisuals/main/images/11.jpg" alt="Wrocław market square at night" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROW 5: 04 EXPERIENCE TIMELINE BENTO ============ -->
+  <section id="experience" class="bento-section">
+    <div class="bento-card bento-card--experience">
+      <p class="section-label">04 — <span data-i18n="exp.label">Experience</span></p>
+      <h2 data-i18n="exp.h2">My path</h2>
+
+      <ul class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__dot timeline__dot--green"></div>
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3 data-i18n="e1.title">B.Sc. Software Development</h3>
+              <span class="timeline__date">2024 — 2028</span>
+            </div>
+            <p class="timeline__company">WSB Merito Wrocław</p>
+            <p data-i18n="e1.desc">Currently in my 3rd year — building the fundamentals: Python, C, algorithms, databases, operating systems, networking, software testing, and containerized cloud workflows.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__dot timeline__dot--blue"></div>
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3>Rideshare Driver</h3>
+              <span class="timeline__date">May 2025 — Present</span>
+            </div>
+            <p class="timeline__company">Bolt / Uber, Wrocław</p>
+            <p>Hundreds of daily conversations in English with passengers from everywhere. Same instinct as my Erasmus days: read the situation fast, stay calm, keep things moving smoothly.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__dot timeline__dot--green"></div>
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3 data-i18n="e2.title">Production Operator</h3>
+              <span class="timeline__date">2024 — 2025</span>
+            </div>
+            <p class="timeline__company">LG Energy Solution, Wrocław</p>
+            <p data-i18n="e2.desc">Operated automated machinery on a lithium-ion battery assembly line, holding zero-defect quality standards under strict safety protocols. Taught me more about process discipline and precision than most classrooms could.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__dot timeline__dot--amber"></div>
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3 data-i18n="e3.title">Student Coordinator &amp; Team Leader</h3>
+              <span class="timeline__date">2022 — 2024</span>
+            </div>
+            <p class="timeline__company">Erasmus+ International Projects</p>
+            <p data-i18n="e3.desc">Where it actually started. Selected as student project leader across multiple international Erasmus+ programs—coordinating teams, representing my school abroad, and bridging local and foreign students in English.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__dot timeline__dot--muted"></div>
+          <div class="timeline__content">
+            <div class="timeline__row">
+              <h3 data-i18n="e4.title">High School</h3>
+              <span class="timeline__date">2020 — 2024</span>
+            </div>
+            <p class="timeline__company">Torbalı Anatolian High School</p>
+            <p data-i18n="e4.desc">Math / language track graduate.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ROW 6: 05 CONTACT BENTO ============ -->
+  <section id="contact" class="bento-section">
+    <div class="bento-card bento-card--contact" data-tilt>
+      <p class="section-label">05 — <span data-i18n="contact.label">Contact</span></p>
+      <h2 data-i18n="contact.h2">Let's build something.</h2>
+      <p class="contact__sub" data-i18n="contact.sub">Open to internships, trainee roles, and anything hands-on. The fastest way to reach me is email.</p>
+      <a href="mailto:muzafferbener@icloud.com" class="contact__email">muzafferbener@icloud.com</a>
+      <div class="contact__socials">
         <a href="https://github.com/muzo-sh" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/muzosh/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:muzafferbener@icloud.com">Email ↗</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="sec" id="about">
-    <div class="wrap grid">
-      <div class="sec__label"><span class="hand" data-i18n="about.label">my story</span></div>
-      <div class="sec__body">
-        <h2 data-i18n="about.h2">I wasn't much of a student until one opportunity changed that.</h2>
-        <p data-i18n="about.p">In 11th grade I was picked for my first Erasmus+ project, and things turned around. My teachers kept choosing me for later international projects because I was reliable in English and stepped in early when something was about to go wrong. That's how I became a team leader — and how I ended up studying software in Poland.</p>
-
-        <dl class="facts">
-          <div>
-            <dt data-i18n="facts.now">Now</dt>
-            <dd data-i18n="facts.nowv">3rd year student, software development, WSB Merito Wrocław</dd>
-          </div>
-          <div>
-            <dt data-i18n="facts.lang">Languages</dt>
-            <dd data-i18n="facts.langv">Turkish (native), English (C1), German (pre-intermediate), Polish (beginner)</dd>
-          </div>
-          <div>
-            <dt data-i18n="facts.eng">English</dt>
-            <dd><span data-i18n="facts.engv">C1 certificate, British Culture Language Schools, 2022</span> · <a class="link" href="english-c1-certificate.pdf" target="_blank" rel="noopener" data-i18n="facts.view">view</a></dd>
-          </div>
-          <div>
-            <dt data-i18n="facts.grad">Graduation</dt>
-            <dd data-i18n="facts.gradv">February 2028 (expected)</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="sec" id="work">
-    <div class="wrap grid">
-      <div class="sec__label"><span class="hand" data-i18n="work.label">projects</span></div>
-      <div class="sec__body">
-        <h2 data-i18n="work.h2">What I'm building</h2>
-        <p class="lead-in" data-i18n="work.intro">I'd rather show a few honest, small projects than a long list. Each one says what is done and what is not.</p>
-
-        <div class="cards">
-
-          <article class="card card--wip">
-            <span class="pill" data-i18n="p1.pill">In progress</span>
-            <h3>Garage Log</h3>
-            <p data-i18n="p1.desc">A Java console app that tracks fuel and service history, reminds me when maintenance is due, and decodes basic OBD-II data (coolant temperature, fault codes). Built while learning Java.</p>
-            <p class="card__meta" data-i18n="p1.meta">Java 17 · text-file storage · automated tests</p>
-            <a href="https://github.com/muzo-sh/garage-log" target="_blank" rel="noopener" class="link" data-i18n="p1.link">View on GitHub ↗</a>
-          </article>
-
-          <article class="card">
-            <span class="pill pill--quiet" data-i18n="p2.pill">Idea</span>
-            <h3 data-i18n="p2.title">Hybrid battery health app</h3>
-            <p data-i18n="p2.desc">A friendlier diagnostics tool for my Lexus CT200h: temperatures in °C with green / yellow / red zones, fault codes in plain language, and step-by-step fixes. Not started yet — the decoder in Garage Log is the first step.</p>
-          </article>
-
-          <article class="card card--game" id="lights-out">
-            <span class="pill pill--quiet" data-i18n="p3.pill">Play</span>
-            <h3 data-i18n="p3.title">Side quest: Lights Out</h3>
-            <p data-i18n="p3.desc">Click a light to flip it and its neighbours. Turn them all off. (Written with AI assistance.)</p>
-            <div class="lo">
-              <div id="lo-board" class="lo__board" role="group" aria-label="Lights Out puzzle"></div>
-              <div class="lo__side">
-                <p class="lo__count"><span data-i18n="lo.moves">Moves:</span> <span id="lo-moves">0</span></p>
-                <p id="lo-status" class="lo__status" role="status" aria-live="polite"></p>
-                <button type="button" id="lo-new" class="btn btn--outline btn--small" data-i18n="lo.new">New puzzle</button>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="sec" id="experience">
-    <div class="wrap grid">
-      <div class="sec__label"><span class="hand" data-i18n="exp.label">experience</span></div>
-      <div class="sec__body">
-        <h2 data-i18n="exp.h2">My path</h2>
-
-        <ol class="path">
-          <li>
-            <span class="path__date">2024 — 2028</span>
-            <div>
-              <h3 data-i18n="e1.title">Software Development (undergraduate)</h3>
-              <p class="path__org">WSB Merito University Wrocław</p>
-              <p data-i18n="e1.desc">Python, algorithms and data structures, databases, operating systems, networking, software testing. This semester: cloud applications, software engineering, open-source tools.</p>
-            </div>
-          </li>
-          <li>
-            <span class="path__date">10/2024 — 02/2025</span>
-            <div>
-              <h3 data-i18n="e2.title">Production Operator (part-time)</h3>
-              <p class="path__org">LG Energy Solution, Wrocław</p>
-              <p data-i18n="e2.desc">About 40 working days. Operated automated machinery on a lithium-ion battery assembly line, following safety and quality procedures.</p>
-            </div>
-          </li>
-          <li>
-            <span class="path__date">2022 — 2024</span>
-            <div>
-              <h3 data-i18n="e3.title">Student Team Leader, Erasmus+ projects</h3>
-              <p class="path__org">Torbalı Anatolian High School</p>
-              <p data-i18n="e3.desc">Led student groups of 3–10 in 4 official projects and several school-hosted exchanges, about 10 international activities in total. Coordinated tasks, represented my school abroad, and helped local and foreign students work together in English.</p>
-            </div>
-          </li>
-          <li>
-            <span class="path__date">2020 — 2024</span>
-            <div>
-              <h3 data-i18n="e4.title">High school</h3>
-              <p class="path__org">Torbalı Anatolian High School</p>
-              <p data-i18n="e4.desc">Math / language track.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="sec sec--tint" id="contact">
-    <div class="wrap grid">
-      <div class="sec__label"><span class="hand" data-i18n="contact.label">say hi</span></div>
-      <div class="sec__body">
-        <h2 data-i18n="contact.h2">Let's build something.</h2>
-        <p class="contact__sub" data-i18n="contact.sub">Open to internships and trainee roles. Email is the fastest way to reach me.</p>
-
-        <div class="contact__mail">
-          <a href="mailto:muzafferbener@icloud.com" class="contact__email">muzafferbener@icloud.com</a>
-          <span class="contact__note" aria-hidden="true">
-            <span data-i18n="contact.note">write me here</span>
-            <svg viewBox="0 0 60 40" width="60" height="40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-              <path d="M6 6 C 14 24, 30 32, 54 30"/>
-              <path d="M54 30 L 42 22 M54 30 L 43 38"/>
-            </svg>
-          </span>
-        </div>
-
-        <div class="contact__socials">
-          <a href="https://github.com/muzo-sh" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/muzosh/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        </div>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener">Muzo Visuals ↗</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="wrap">
-    <span>© <span id="year"></span> Muzaffer Bener. <span data-i18n="footer.text">Built with AI assistance (Claude) and deployed on Vercel.</span></span>
-  </div>
+<footer class="footer wrap">
+  <span>© <span id="year"></span> Muzaffer Bener. <span data-i18n="footer.text">Built from scratch, deployed on Vercel.</span></span>
 </footer>
 
 <script src="script.js"></script>
