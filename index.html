@@ -19,11 +19,16 @@
   <div class="wrap top__inner">
     <a href="#top" class="top__name">Muzaffer Bener</a>
     <nav class="top__links" aria-label="Main">
-      <a href="#about">My Story</a>
-      <a href="#work">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact" class="top__cta">Say hi</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#work" data-i18n="nav.projects">Projects</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" class="top__cta" data-i18n="nav.contact">Say hi</a>
     </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+      <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+    </div>
   </div>
 </header>
 
@@ -31,6 +36,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
+    <canvas id="hero-3d" class="hero__canvas" aria-hidden="true"></canvas>
     <div class="wrap">
 
       <p class="hero__note" aria-hidden="true">
@@ -41,27 +47,24 @@
         </svg>
       </p>
 
-      <p class="hero__eyebrow">Software development student · Wrocław, Poland</p>
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Software development student · Wrocław, Poland</p>
 
-      <h1 class="hero__title">Software, close to
-        <span class="mark">real machines.<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 130 7 S 230 3, 298 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <h1 class="hero__title"><span data-i18n="hero.t1">Software, close to</span>
+        <span class="mark"><span data-i18n="hero.t2">real machines.</span><svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 40 3, 80 13, 130 7 S 230 3, 298 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
       </h1>
 
-      <p class="hero__lead">Pursuing to build a life with balance where I will not trade my every night for.
-        Using the technology to increase capability, not lazier but easier solutions.
-        Aiming innovations everyday to make world more liveable place as a human being.
-        Looking for a place where I will make an unforgettable history</p>
+      <p class="hero__lead" data-i18n="hero.lead">Third-year software development student. I like knowing why things work — cars, automation, puzzles — and I'm learning Java by building small, real projects.</p>
 
       <ul class="tags" aria-label="Tools I use">
         <li>Python</li>
-        <li>Java</li>
+        <li data-i18n="tag.java">Java (learning)</li>
+        <li data-i18n="tag.sql">SQL (basics)</li>
         <li>Git</li>
-        <li>Linux</li>
       </ul>
 
       <div class="hero__actions">
-        <a href="#work" class="btn btn--solid">See my work</a>
-        <a href="/resume.pdf" class="btn btn--outline">Download my CV</a>
+        <a href="#work" class="btn btn--solid" data-i18n="hero.work">See my work</a>
+        <a href="/resume.pdf" class="btn btn--outline" data-i18n="hero.cv">Download my CV</a>
       </div>
 
       <div class="hero__links">
@@ -76,39 +79,27 @@
   <!-- ============ ABOUT ============ -->
   <section class="sec" id="about">
     <div class="wrap grid">
-      <div class="sec__label"><span class="hand">my story</span></div>
+      <div class="sec__label"><span class="hand" data-i18n="about.label">my story</span></div>
       <div class="sec__body">
-        <h2>I wasn't much of a student until one opportunity changed that.</h2>
-        <p>
-          Until 10th grade I wasn't especially engaged in school. That changed
-          in 11th grade, when I was picked for first Erasmus+ project.
-          That's genuinely where things turned around, my teachers
-          kept choosing me for whatever international project came up after
-          that, mostly because I was reliable in English and responsible character
-          stepping in early when something's about to go sideways.
-          I'd rather fix problems quietly, step by step, than let noise build up
-          around me, all these put me in a team-leader seat again and again.
-        </p>
-        <p>
-          Since then until the end of high school I've gravitated toward being
-          the person who holds a room together; coordinating across languages,
-          representing my school abroad. This opportunity gave me the vision
-          to start taking the action which changed my life and brought me all the
-          way to Poland.
-        </p>
+        <h2 data-i18n="about.h2">I wasn't much of a student until one opportunity changed that.</h2>
+        <p data-i18n="about.p">In 11th grade I was picked for my first Erasmus+ project, and things turned around. My teachers kept choosing me for later international projects because I was reliable in English and stepped in early when something was about to go wrong. That's how I became a team leader — and how I ended up studying software in Poland.</p>
 
         <dl class="facts">
           <div>
-            <dt>Now</dt>
-            <dd>3rd year student, software development, WSB Merito Wrocław</dd>
+            <dt data-i18n="facts.now">Now</dt>
+            <dd data-i18n="facts.nowv">3rd year student, software development, WSB Merito Wrocław</dd>
           </div>
           <div>
-            <dt>Languages</dt>
-            <dd>Turkish (native), English (fluent), German (pre-intermediate), Polish (beginner)</dd>
+            <dt data-i18n="facts.lang">Languages</dt>
+            <dd data-i18n="facts.langv">Turkish (native), English (C1), German (pre-intermediate), Polish (beginner)</dd>
           </div>
           <div>
-            <dt>Graduation</dt>
-            <dd>February 2028 (expected)</dd>
+            <dt data-i18n="facts.eng">English</dt>
+            <dd><span data-i18n="facts.engv">C1 certificate, British Culture Language Schools, 2022</span> · <a class="link" href="english-c1-certificate.pdf" target="_blank" rel="noopener" data-i18n="facts.view">view</a></dd>
+          </div>
+          <div>
+            <dt data-i18n="facts.grad">Graduation</dt>
+            <dd data-i18n="facts.gradv">February 2028 (expected)</dd>
           </div>
         </dl>
       </div>
@@ -118,18 +109,41 @@
   <!-- ============ PROJECTS ============ -->
   <section class="sec" id="work">
     <div class="wrap grid">
-      <div class="sec__label"><span class="hand">projects</span></div>
+      <div class="sec__label"><span class="hand" data-i18n="work.label">projects</span></div>
       <div class="sec__body">
-        <h2>What I'm working on</h2>
+        <h2 data-i18n="work.h2">What I'm building</h2>
+        <p class="lead-in" data-i18n="work.intro">I'd rather show a few honest, small projects than a long list. Each one says what is done and what is not.</p>
 
-        <div class="note">
-          <span class="pill">In progress</span>
-          <h3>Real projects, coming soon</h3>
-          <p>I'm still early in building this site out, and I'd rather leave
-            this section honest and empty than fill it with AI generated
-            projects that don't reflect what I can actually do. I'm currently
-            working on my first real projects. Stay tuned.</p>
-          <a href="https://github.com/muzo-sh" target="_blank" rel="noopener" class="link">See my GitHub ↗</a>
+        <div class="cards">
+
+          <article class="card card--wip">
+            <span class="pill" data-i18n="p1.pill">In progress</span>
+            <h3>Garage Log</h3>
+            <p data-i18n="p1.desc">A Java console app that tracks fuel and service history, reminds me when maintenance is due, and decodes basic OBD-II data (coolant temperature, fault codes). Built while learning Java.</p>
+            <p class="card__meta" data-i18n="p1.meta">Java 17 · text-file storage · automated tests</p>
+            <a href="https://github.com/muzo-sh/garage-log" target="_blank" rel="noopener" class="link" data-i18n="p1.link">View on GitHub ↗</a>
+          </article>
+
+          <article class="card">
+            <span class="pill pill--quiet" data-i18n="p2.pill">Idea</span>
+            <h3 data-i18n="p2.title">Hybrid battery health app</h3>
+            <p data-i18n="p2.desc">A friendlier diagnostics tool for my Lexus CT200h: temperatures in °C with green / yellow / red zones, fault codes in plain language, and step-by-step fixes. Not started yet — the decoder in Garage Log is the first step.</p>
+          </article>
+
+          <article class="card card--game" id="lights-out">
+            <span class="pill pill--quiet" data-i18n="p3.pill">Play</span>
+            <h3 data-i18n="p3.title">Side quest: Lights Out</h3>
+            <p data-i18n="p3.desc">Click a light to flip it and its neighbours. Turn them all off. (Written with AI assistance.)</p>
+            <div class="lo">
+              <div id="lo-board" class="lo__board" role="group" aria-label="Lights Out puzzle"></div>
+              <div class="lo__side">
+                <p class="lo__count"><span data-i18n="lo.moves">Moves:</span> <span id="lo-moves">0</span></p>
+                <p id="lo-status" class="lo__status" role="status" aria-live="polite"></p>
+                <button type="button" id="lo-new" class="btn btn--outline btn--small" data-i18n="lo.new">New puzzle</button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </div>
@@ -138,66 +152,41 @@
   <!-- ============ EXPERIENCE ============ -->
   <section class="sec" id="experience">
     <div class="wrap grid">
-      <div class="sec__label"><span class="hand">experience</span></div>
+      <div class="sec__label"><span class="hand" data-i18n="exp.label">experience</span></div>
       <div class="sec__body">
-        <h2>My path</h2>
+        <h2 data-i18n="exp.h2">My path</h2>
 
         <ol class="path">
           <li>
-            <span class="path__date">2025 May — Present</span>
-            <div>
-              <h3>Rideshare driver</h3>
-              <p class="path__org">Bolt / Uber, Wrocław</p>
-              <p>Hundreds of daily conversations in English with people from
-                everywhere. Same instinct as my Erasmus days: read the situation
-                fast, stay calm, keep things moving smoothly.</p>
-            </div>
-          </li>
-          <li>
             <span class="path__date">2024 — 2028</span>
             <div>
-              <h3>B.Sc. Software Development</h3>
-              <p class="path__org">WSB Merito Wrocław</p>
-              <p>Currently in my 3rd year — building the fundamentals: computer
-                science, algorithms, and the tools to actually ship software.</p>
+              <h3 data-i18n="e1.title">Software Development (undergraduate)</h3>
+              <p class="path__org">WSB Merito University Wrocław</p>
+              <p data-i18n="e1.desc">Python, algorithms and data structures, databases, operating systems, networking, software testing. This semester: cloud applications, software engineering, open-source tools.</p>
             </div>
           </li>
           <li>
-            <span class="path__date">2024 — 2025</span>
+            <span class="path__date">10/2024 — 02/2025</span>
             <div>
-              <h3>Food Delivery courier</h3>
-              <p class="path__org">Uber Eats, Wrocław</p>
-              <p>Couple months of experiencing how people have struggles with delivery jobs.</p>
-            </div>
-          </li>
-          <li>
-            <span class="path__date">2024 — 2025</span>
-            <div>
-              <h3>Production Operator</h3>
-              <p class="path__org">LG Energy Solutions, Wrocław</p>
-              <p>Operated automated machinery on a lithium-ion battery assembly
-                line for close to five months, holding zero-defect quality
-                standards under strict safety protocols. Taught me more about
-                process discipline and precision than most classrooms could.</p>
+              <h3 data-i18n="e2.title">Production Operator (part-time)</h3>
+              <p class="path__org">LG Energy Solution, Wrocław</p>
+              <p data-i18n="e2.desc">About 40 working days. Operated automated machinery on a lithium-ion battery assembly line, following safety and quality procedures.</p>
             </div>
           </li>
           <li>
             <span class="path__date">2022 — 2024</span>
             <div>
-              <h3>Student Coordinator</h3>
-              <p class="path__org">Erasmus+ Projects</p>
-              <p>Where it actually started. Selected as student project leader
-                across multiple international Erasmus+ programs coordinating
-                teams, representing my school abroad, and bridging local and
-                foreign students in English.</p>
+              <h3 data-i18n="e3.title">Student Team Leader, Erasmus+ projects</h3>
+              <p class="path__org">Torbalı Anatolian High School</p>
+              <p data-i18n="e3.desc">Led student groups of 3–10 in 4 official projects and several school-hosted exchanges, about 10 international activities in total. Coordinated tasks, represented my school abroad, and helped local and foreign students work together in English.</p>
             </div>
           </li>
           <li>
             <span class="path__date">2020 — 2024</span>
             <div>
-              <h3>High school</h3>
-              <p class="path__org">Torbali Anatolian High School</p>
-              <p>Math / language section graduated.</p>
+              <h3 data-i18n="e4.title">High school</h3>
+              <p class="path__org">Torbalı Anatolian High School</p>
+              <p data-i18n="e4.desc">Math / language track.</p>
             </div>
           </li>
         </ol>
@@ -208,16 +197,15 @@
   <!-- ============ CONTACT ============ -->
   <section class="sec sec--tint" id="contact">
     <div class="wrap grid">
-      <div class="sec__label"><span class="hand">say hi</span></div>
+      <div class="sec__label"><span class="hand" data-i18n="contact.label">say hi</span></div>
       <div class="sec__body">
-        <h2>Let's build something.</h2>
-        <p class="contact__sub">Open to internships, trainee roles, and anything
-          hands on. The fastest way to reach me is email.</p>
+        <h2 data-i18n="contact.h2">Let's build something.</h2>
+        <p class="contact__sub" data-i18n="contact.sub">Open to internships and trainee roles. Email is the fastest way to reach me.</p>
 
         <div class="contact__mail">
           <a href="mailto:muzafferbener@icloud.com" class="contact__email">muzafferbener@icloud.com</a>
           <span class="contact__note" aria-hidden="true">
-            write me here
+            <span data-i18n="contact.note">write me here</span>
             <svg viewBox="0 0 60 40" width="60" height="40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
               <path d="M6 6 C 14 24, 30 32, 54 30"/>
               <path d="M54 30 L 42 22 M54 30 L 43 38"/>
@@ -237,7 +225,7 @@
 
 <footer class="footer">
   <div class="wrap">
-    <span>© <span id="year"></span> Muzaffer Bener. Built from scratch, deployed on Vercel.</span>
+    <span>© <span id="year"></span> Muzaffer Bener. <span data-i18n="footer.text">Built with AI assistance (Claude) and deployed on Vercel.</span></span>
   </div>
 </footer>
 

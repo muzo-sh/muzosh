@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
   .hero { padding: 72px 0 64px; }
   .sec { padding: 64px 0; }
 
-  .grid { grid-template-columns: 1fr; row-gap: 14px; }
+  .grid { grid-template-columns: minmax(0, 1fr); row-gap: 14px; }
   .sec__label { padding-top: 0; }
 
   .facts > div { grid-template-columns: 1fr; gap: 2px; }
@@ -274,3 +274,95 @@ a:focus-visible, .btn:focus-visible {
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+/* ============================================================
+   Additions: language switch, 3D hero, project cards, puzzle
+   ============================================================ */
+
+/* Language switch (inside the top navigation) */
+.top__inner { justify-content: flex-start; }
+.top__links { margin-left: auto; }
+.lang { display: flex; gap: 2px; margin-left: 18px; }
+@media (max-width: 520px) {
+  .lang { order: 2; margin-left: auto; }
+  .top__links { order: 3; width: 100%; margin-left: 0; justify-content: space-between; }
+}
+.lang button {
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease;
+}
+.lang button:hover { color: var(--ink); }
+.lang button[aria-pressed="true"] { color: var(--green); border-color: var(--green); }
+.lang button:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+/* 3D hero scene: sits behind the text, never blocks clicks */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { z-index: 1; }
+.hero__canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(640px, 60%);
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%);
+  mask-image: linear-gradient(to right, transparent 0, #000 22%);
+}
+@media (max-width: 900px) {
+  .hero__canvas { width: 100%; opacity: .22; }
+}
+
+/* Project cards */
+.sec__body { min-width: 0; }
+.sec__body > p.lead-in { margin-bottom: 28px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+  gap: 20px;
+  max-width: 880px;
+  margin-top: 28px;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 26px;
+  background: #fff;
+}
+.card--wip { border: 1px dashed var(--green); background: var(--green-tint); }
+.card--game { grid-column: 1 / -1; }
+.card h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; }
+.card p { color: var(--ink-2); font-size: 15px; margin-bottom: 14px; }
+.card .card__meta { font-size: 13px; color: var(--green); font-weight: 500; }
+.pill--quiet { color: var(--ink-2); border-color: var(--line); }
+.btn--small { padding: 8px 16px; font-size: 13.5px; cursor: pointer; font-family: inherit; }
+
+/* Lights Out puzzle */
+.lo { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; margin-top: 6px; }
+.lo__board { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; width: min(100%, 280px); }
+.lo__cell {
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  transition: background .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.lo__cell:hover { border-color: var(--green); }
+.lo__cell[aria-pressed="true"] {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 14px rgba(31, 122, 77, .45);
+}
+.lo__cell:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.lo__count { color: var(--ink); font-size: 15px; margin-bottom: 6px; }
+.lo__status { color: var(--green); font-weight: 500; min-height: 1.6em; margin-bottom: 12px; }
