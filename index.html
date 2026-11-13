@@ -21,7 +21,7 @@
     <nav class="top__links" aria-label="Main navigation">
       <a href="#about" data-i18n="nav.about">My Story</a>
       <a href="#work" data-i18n="nav.projects">Projects</a>
-      <a href="#visuals">Visuals</a>
+      <a href="#visuals" data-i18n="nav.visuals">Visuals</a>
       <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#contact" class="top__cta" data-i18n="nav.contact">Say hi</a>
     </nav>
@@ -37,7 +37,6 @@
 
   <!-- ============ ROW 1: HERO BENTO + PORTRAIT BENTO ============ -->
   <section class="bento-grid hero-bento">
-    <!-- Hero Main Card (8 cols) -->
     <div class="bento-card bento-card--hero" data-tilt>
       <canvas id="hero-3d" class="hero__canvas" aria-hidden="true"></canvas>
       <div class="hero__content">
@@ -58,7 +57,7 @@
 
         <div class="hero__actions">
           <a href="#work" class="btn btn--primary" data-i18n="hero.work">See my work</a>
-          <a href="/resume.pdf" class="btn btn--ghost" data-i18n="hero.cv">Download My CV</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="hero.cv">Download My CV</a>
         </div>
 
         <div class="hero__contacts">
@@ -78,7 +77,6 @@
       </div>
     </div>
 
-    <!-- Portrait Card (4 cols) -->
     <div class="bento-card bento-card--portrait" data-tilt>
       <img src="portrait.jpg" alt="Muzaffer Bener" class="portrait__img">
       <div class="portrait__overlay">
@@ -107,11 +105,19 @@
         <strong class="stat__num" data-i18n="facts.nowTitle">3rd Year Student</strong>
         <span class="stat__label" data-i18n="facts.nowv">B.Sc. Software Development, WSB Merito Wrocław</span>
       </div>
+
+      <!-- Language Card + English C1 Certificate Link -->
       <div class="bento-card bento-card--stat" data-tilt>
-        <span class="stat__tag" data-i18n="facts.lang">Languages</span>
-        <strong class="stat__num">4 Languages</strong>
+        <div class="stat__header">
+          <span class="stat__tag" data-i18n="facts.lang">Languages</span>
+          <a href="english-c1-certificate.pdf" target="_blank" rel="noopener" class="cert-badge" data-i18n="facts.cert">
+            ✓ English C1 Certificate ↗
+          </a>
+        </div>
+        <strong class="stat__num" data-i18n="facts.langTitle">4 Languages</strong>
         <span class="stat__label" data-i18n="facts.langv">Turkish (Native) · English (Fluent C1) · German (Pre-intermediate) · Polish (Beginner)</span>
       </div>
+
       <div class="bento-card bento-card--stat" data-tilt>
         <span class="stat__tag" data-i18n="facts.grad">Timeline</span>
         <strong class="stat__num" data-i18n="facts.gradv">February 2028</strong>
@@ -120,71 +126,61 @@
     </div>
   </section>
 
-  <!-- ============ ROW 3: 02 PROJECTS + STARRED GITHUB + LIGHTS OUT ============ -->
+  <!-- ============ ROW 3: 02 REAL GITHUB REPOS + LIVE WROCŁAW TELEMETRY ============ -->
   <section id="work" class="bento-section">
     <div class="section-head">
       <div>
-        <p class="section-label">02 — <span data-i18n="work.label">Projects</span></p>
-        <h2 data-i18n="work.h2">What I'm building</h2>
+        <p class="section-label">02 — <span data-i18n="work.label">Projects &amp; Code</span></p>
+        <h2 data-i18n="work.h2">What I've actually built</h2>
       </div>
-      <p class="section-sub" data-i18n="work.intro">I'd rather show a few honest, real projects than a long AI-generated list. Starred repositories sync automatically from GitHub.</p>
+      <p class="section-sub" data-i18n="work.intro">No unbuilt concepts or AI filler. Below are my live repositories pulled directly from GitHub alongside my deployed web platforms.</p>
     </div>
 
     <div class="bento-grid work-bento">
-      <!-- Featured Project 1: Garage Log -->
-      <div class="bento-card bento-card--project" data-tilt>
-        <div class="card-top">
-          <span class="pill pill--green" data-i18n="p1.pill">In progress</span>
-          <span class="mono-tag">Java 17 · OBD-II</span>
-        </div>
-        <h3>Garage Log &amp; OBD-II Decoder</h3>
-        <p data-i18n="p1.desc">
-          A console-first application that tracks fuel and service history, reminds me when maintenance is due, and decodes basic OBD-II frames (coolant temperature, fault codes). Built while learning Java step by step.
-        </p>
-        <div class="card-footer">
-          <span class="card__meta" data-i18n="p1.meta">Java 17 · flat-file storage · automated tests</span>
-          <a href="https://github.com/muzo-sh" target="_blank" rel="noopener" class="card-link" data-i18n="p1.link">See on GitHub ↗</a>
-        </div>
-      </div>
-
-      <!-- Featured Project 2: Hybrid Battery Health -->
-      <div class="bento-card bento-card--project" data-tilt>
-        <div class="card-top">
-          <span class="pill" data-i18n="p2.pill">Concept</span>
-          <span class="mono-tag">2ZR-FXE · Diagnostics</span>
-        </div>
-        <h3 data-i18n="p2.title">Hybrid Battery Health Monitor</h3>
-        <p data-i18n="p2.desc">
-          A clear diagnostic tool for my 2011 Lexus CT200h: block temperatures in °C with green / amber / red zones, plain-language fault codes, and step-by-step maintenance checks.
-        </p>
-        <div class="card-footer">
-          <span class="card__meta">Automotive Telemetry · DIY Maintenance</span>
-          <span class="mono-tag">Next milestone</span>
-        </div>
-      </div>
-
-      <!-- Live Starred Repos from GitHub -->
+      <!-- Live GitHub Repositories (7 cols) -->
       <div class="bento-card bento-card--repos" data-tilt>
         <div class="card-top">
-          <span class="pill pill--green">★ Starred on GitHub</span>
-          <a href="https://github.com/muzo-sh?tab=stars" target="_blank" rel="noopener" class="card-link">github.com/muzo-sh ↗</a>
+          <span class="pill pill--green" data-i18n="work.ghPill">● Live from GitHub</span>
+          <a href="https://github.com/muzo-sh?tab=repositories" target="_blank" rel="noopener" class="card-link">github.com/muzo-sh ↗</a>
         </div>
         <div id="github-projects" class="repo-grid">
-          <p class="repo-card__loading">Loading starred repositories…</p>
+          <p class="repo-card__loading" data-i18n="work.loading">Fetching repositories from GitHub…</p>
         </div>
       </div>
 
-      <!-- Interactive Mini-Game: Lights Out -->
-      <div class="bento-card bento-card--game" data-tilt>
-        <div class="game-info">
-          <span class="pill" data-i18n="p3.pill">Play</span>
-          <h3 data-i18n="p3.title">Side quest: Lights Out</h3>
-          <p data-i18n="p3.desc">Click a cell to flip it and its neighbors. Turn all lights off to solve the board.</p>
-          <p class="lo__count"><span data-i18n="lo.moves">Moves:</span> <strong id="lo-moves">0</strong></p>
-          <p class="lo__status" id="lo-status" aria-live="polite"></p>
-          <button type="button" class="btn btn--small" id="lo-new" data-i18n="lo.new">New puzzle</button>
+      <!-- Live Wrocław Telemetry Card (5 cols) -->
+      <div class="bento-card bento-card--telemetry" data-tilt>
+        <div class="card-top">
+          <span class="pill pill--green"><span class="pulse-dot"></span> <span data-i18n="tel.pill">Live Telemetry</span></span>
+          <span class="mono-tag">51.1079° N, 17.0385° E</span>
         </div>
-        <div class="lo__board" id="lo-board" role="group" aria-label="Lights Out 5 by 5 board"></div>
+
+        <h3 class="telemetry__city" data-i18n="tel.title">Wrocław, Poland</h3>
+        <p class="telemetry__sub" data-i18n="tel.desc">Real-time local environment &amp; workstation status.</p>
+
+        <div class="telemetry__grid">
+          <div class="telemetry__box">
+            <span class="telemetry__label" data-i18n="tel.timeLabel">Local Time (CET)</span>
+            <strong class="telemetry__val" id="tel-time">--:--:--</strong>
+          </div>
+          <div class="telemetry__box">
+            <span class="telemetry__label" data-i18n="tel.weatherLabel">Atmosphere</span>
+            <strong class="telemetry__val" id="tel-weather">Loading…</strong>
+          </div>
+          <div class="telemetry__box">
+            <span class="telemetry__label" data-i18n="tel.windLabel">Wind / Conditions</span>
+            <strong class="telemetry__val" id="tel-wind">-- km/h</strong>
+          </div>
+          <div class="telemetry__box">
+            <span class="telemetry__label" data-i18n="tel.focusLabel">Current Focus</span>
+            <strong class="telemetry__val telemetry__val--green" data-i18n="tel.focusVal">Python · C · Docker</strong>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="card__meta" id="tel-updated">Syncing with Open-Meteo…</span>
+          <span class="mono-tag">WSB Merito</span>
+        </div>
       </div>
     </div>
   </section>
@@ -194,11 +190,11 @@
     <div class="bento-card bento-card--visuals" data-tilt>
       <div class="visuals-head">
         <div>
-          <p class="section-label">03 — Photography</p>
-          <h2>Muzo Visuals — Moments, framed as I see them.</h2>
-          <p class="section-sub">Portraits, night street scenes, and creative visuals around Wrocław. Pulled live from my photography portfolio.</p>
+          <p class="section-label">03 — <span data-i18n="vis.label">Photography</span></p>
+          <h2 data-i18n="vis.h2">Muzo Visuals — Moments, framed as I see them.</h2>
+          <p class="section-sub" data-i18n="vis.sub">Portraits, night street scenes, and creative visuals around Wrocław. Pulled live from my photography portfolio.</p>
         </div>
-        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="btn btn--primary">Visit visuals.muzo.sh ↗</a>
+        <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="vis.btn">Visit visuals.muzo.sh ↗</a>
       </div>
       <div class="visuals-strip" id="visuals-strip">
         <a href="https://visuals.muzo.sh" target="_blank" rel="noopener" class="visuals-thumb">
@@ -239,11 +235,11 @@
           <div class="timeline__dot timeline__dot--blue"></div>
           <div class="timeline__content">
             <div class="timeline__row">
-              <h3>Rideshare Driver</h3>
-              <span class="timeline__date">May 2025 — Present</span>
+              <h3 data-i18n="e5.title">Rideshare Driver</h3>
+              <span class="timeline__date" data-i18n="e5.date">May 2025 — Present</span>
             </div>
             <p class="timeline__company">Bolt / Uber, Wrocław</p>
-            <p>Hundreds of daily conversations in English with passengers from everywhere. Same instinct as my Erasmus days: read the situation fast, stay calm, keep things moving smoothly.</p>
+            <p data-i18n="e5.desc">Hundreds of daily conversations in English with passengers from everywhere. Same instinct as my Erasmus days: read the situation fast, stay calm, keep things moving smoothly.</p>
           </div>
         </li>
         <li class="timeline__item">
